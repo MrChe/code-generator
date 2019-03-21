@@ -1,0 +1,11 @@
+import { call, put, select, takeLatest } from 'redux-saga/effects';
+import {{ constantCase name }} from 'types/{{ camelCase name }}';
+import {{ camelCase name }}Actions from 'actions/{{ camelCase name }}';
+import { {{ camelCase name }}Selector } from 'selectors/{{ camelCase name }}';
+
+export function* defaultSaga() {
+  const {{ camelCase name }} = yield select({{ camelCase name }}Selector);
+  if (dataReady) {
+    yield put({{ camelCase name }}.default());
+  }
+}

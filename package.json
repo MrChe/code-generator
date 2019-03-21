@@ -1,0 +1,35 @@
+{
+  "name": "@megogo-code-generator/root",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.x2sy.com/leonid.kuznetsov/megogo-code-generator"
+  },
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "generate": "plop --plopfile packages/embed/dist/index.js",
+    "clear": "rimraf node_modules yarn.lock package-lock.json && yarn",
+    "commit": "git-cz",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
+  },
+  "dependencies": {
+    "plop": "^2.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^6.1.3",
+    "@commitlint/config-conventional": "^6.1.3",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
+    "formatjs-extract-cldr-data": "^4.1.0",
+    "path": "^0.12.7",
+    "yarn": "^1.6.0"
+  },
+  "publishConfig": {
+    "registry": "https://nexus.x2sy.com/repository/mgg-npm-private"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

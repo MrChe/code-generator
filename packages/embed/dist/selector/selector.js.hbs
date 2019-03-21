@@ -1,0 +1,9 @@
+import _ from 'lodash';
+import { createSelector } from 'reselect';
+
+export const foo = (state) => state.{{ camelCase name }};
+
+export const defaultSelector = createSelector(
+  foo,
+  (app) => _.get(app, 'id')
+);

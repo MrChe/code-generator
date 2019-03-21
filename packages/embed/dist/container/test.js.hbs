@@ -1,0 +1,10 @@
+import {{ properCase name }} from 'containers/{{ properCase name }}';
+
+it('should render a {{ properCase name }}', () => {
+  const wrapper = shallow(
+    <{{ properCase name }}
+
+    />
+  );
+  expect(wrapper).toMatchSnapshot();
+});

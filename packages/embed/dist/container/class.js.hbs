@@ -1,0 +1,52 @@
+/**
+ *
+ * {{properCase name }}
+ *
+ */
+
+import React, { {{ type }} } from 'react';
+import PropTypes from 'prop-types';
+{{#if wantHeaders}}
+import { Helmet } from 'react-helmet';
+{{/if}}
+{{#if wantActionsAndReducer}}
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { {{ camelCase name }} as {{ camelCase name }}Selector } from 'selectors/{{ camelCase name }}';
+import {{ camelCase name }}Actions from 'actions/{{ camelCase name }}';
+{{/if}}
+
+@connect(
+  createStructuredSelector({
+    {{ camelCase name }}: {{ camelCase name }}Selector,
+  }),
+  {
+    ...{{ camelCase name }}Actions,
+  }
+)
+
+export class {{ properCase name }} extends {{{ type }}} {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div>
+      {{#if wantHeaders}}
+        <Helmet>
+          <title>{{properCase name}}</title>
+          <meta name="description" content="Description of {{properCase name}}" />
+        </Helmet>
+      {{/if}}
+      </div>
+    );
+  }
+};
+
+{{ properCase name }}.propTypes = {
+
+};
+
+export default {{ properCase name }};
